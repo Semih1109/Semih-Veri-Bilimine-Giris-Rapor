@@ -6,14 +6,17 @@ import numpy as np
 # Excel dosyasını okuma
 df = pd.read_excel("Mudanya.xlsx")
 
+# M² sütununu sayıya çevirme
+df["M²"] = pd.to_numeric(df["M²"], errors="coerce")
+
+# Boş/hatalı satırları temizleme
+df = df.dropna()
+
 # İlk satırları gösterme
 print(df.head())
 
 # Eksik veri kontrolü
 print(df.isnull().sum())
-
-# Eksik verileri temizleme
-df = df.dropna()
 
 # Toplam cami sayısı
 toplam_cami = len(df)
