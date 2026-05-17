@@ -1,0 +1,1 @@
+# Semih-Veri-Bilimine-Giris-Rapor
